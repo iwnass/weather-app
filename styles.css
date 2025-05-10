@@ -1,0 +1,250 @@
+/* General Styles */
+
+/* Header & Logo */
+.header {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Correct centering for container (under fixed header) */
+.container {
+  margin-top: 120px; /* push content below header */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?city,weather,night');
+  background-size: cover;
+  background-position: center;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  background-attachment: fixed;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  background-color: #ffffffcc;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.theme-toggle:hover {
+  background-color: #dddddd;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 650px;
+  height: 100%;
+  padding: 20px;
+}
+
+.weatherform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  z-index: 10;
+  width: 100%;
+}
+
+.cityInput {
+  padding: 16px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 450px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+.cityInput:focus {
+  border-color: #ff6f61;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(255, 111, 97, 0.6);
+}
+
+button {
+  padding: 14px 30px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #e65c50;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+
+.card {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card.hidden {
+  display: none !important;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.weatherEmoji {
+  font-size: 4rem;
+  margin-top: 20px;
+}
+
+.errorDisplay {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cityInput {
+    font-size: 1.2rem;
+    width: 90%;
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  .card h1 {
+    font-size: 2.5rem;
+  }
+
+  .card p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+  }
+}
+
+/* Light Theme Support */
+body.light-theme {
+  background: #f5f5f5;
+  color: #222;
+}
+
+body.light-theme .cityInput {
+  background: #fff;
+  color: #000000;
+  border-color: #ccc;
+}
+
+body.light-theme .card {
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: none;
+}
+
+body.light-theme .card h1 {
+  color: #007bff;
+}
+
+body.light-theme .weatherEmoji {
+  color: #333;
+}
+
+body.light-theme .theme-toggle {
+  background-color: #333;
+  color: #fff;
+}
+
+body.light-theme button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+body.light-theme button:hover {
+  background-color: #0056b3;
+}
