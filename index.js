@@ -41,7 +41,7 @@ function displayWeatherInfo(data) {
     const cityName = data.name;
     const temp = Math.round(data.main.temp);
     const humidity = data.main.humidity;
-    const description = data.weather[0].description;
+    const description = capitalizeWords(data.weather[0].description);
     const weatherId = data.weather[0].id;
     const emoji = getWeatherEmoji(weatherId);
 
@@ -78,4 +78,12 @@ function getWeatherEmoji(weatherId) {
 function displayError(message) {
     card.innerHTML = `<p class="errorDisplay">${message}</p>`;
     card.style.display = "flex";
+}
+
+
+function capitalizeWords(str) {
+    return str
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
 }

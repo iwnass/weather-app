@@ -103,6 +103,11 @@ body {
   backdrop-filter: blur(10px);
 }
 
+.cityInput::placeholder {
+  color: #ffffffcc; 
+}
+
+
 .cityInput:focus {
   border-color: #ff6f61;
   outline: none;
@@ -221,7 +226,7 @@ body.light-theme .cityInput {
 }
 
 body.light-theme .card {
-  background: #ffffff;
+  background: #7c7c7c;
   color: #333;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: none;
